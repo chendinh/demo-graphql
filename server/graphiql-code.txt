@@ -1,3 +1,6 @@
+# After run server successfuly, 
+# You can try http://localhost:4000/graphql (Graphiql page) to work with graphql queries by yourself
+
 mutation{
   addEvent(
     eventName:"New Home",
