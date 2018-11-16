@@ -1,0 +1,93 @@
+mutation{
+  addEvent(
+    eventName:"New Home",
+    dateFrom: "2018-12-01",
+    dateEnd: "2018-12-02",
+    address: "New Life company, Quan 1", 
+    description: "Su kien ngay thanh lap cong ty",
+    companyID: "5becb2c463fd2ec4cdeec476"
+  ){
+    eventName
+    dateFrom
+    dateEnd
+    address
+    description
+    companies {
+      companyName
+      location
+      numberOfStaff
+      establishYear
+    }
+  }
+}
+
+# mutation{
+#   addCompany(
+# 		companyName:"Homebrew",
+#     location:"Quan 4, HCM"
+#     numberOfStaff: 163,
+#     establishYear:2015,
+#   ){
+#     id
+#     companyName
+#     location
+# 		numberOfStaff
+#     establishYear
+#     events {
+#       id
+#       eventName
+# 			address
+#       dateFrom
+#       dateEnd
+#     }
+#   }
+# }
+
+# {
+#   companies{
+#     id
+#     companyName
+#     establishYear
+#     numberOfStaff
+#     location
+#     events{
+#       id
+#       eventName
+#       address
+#       dateFrom
+#     }
+#   }
+# }
+
+# {
+#   company(id: "5be84d1b81b4f521921f05b4" ){
+#     id
+#     companyName
+#     establishYear
+#     numberOfStaff
+#     location
+#     events{
+#       id
+#       eventName
+#       address
+#       dateFrom
+#     }
+#   }
+# }
+
+# {
+#   events{
+#     id
+#     eventName
+#     description
+#     dateFrom
+#     dateEnd
+#     companies {
+#       id
+#       companyName
+#       location
+#       numberOfStaff
+#       establishYear
+#     }
+#   }
+# }
