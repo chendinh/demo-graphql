@@ -1,0 +1,154 @@
+.body {
+  font-family: "Nunito";
+  padding: 0 10% 0 10%;
+  margin: 0;
+  text-align: center;
+}
+
+.Title {
+  font-size: 100px;
+  font-weight: bold;
+  color: grey; 
+  width: 100%;
+  text-align: center;
+  background-color: pink;
+  margin-bottom: 10px;
+}
+
+.Loading {
+  width: "100%";
+  text-align: "center";
+  margin-top: 100px;
+  font-size: 40px;
+  color: grey; 
+}
+
+@media (min-width: 940px) {
+  .event-list-container {
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    grid-column-gap: 2%;
+    padding: 20px 0 0 0;
+    text-align: center;
+    align-content: center;
+  }
+  .item {
+    border-radius: 9px;
+    padding: 10%;
+    font-size: 20px;
+    text-align: left;
+    margin-bottom: 10px; 
+    min-height: 420px;
+    opacity: 0.6;
+    transform: scale(0.9);
+    transition: all 0.2s ease-in-out;
+  }
+  .item:hover {
+    transform: scale(1);
+    opacity: 1;
+  }
+  .company {
+    color: pink; 
+    background-color: grey;
+  }
+  .event {
+    color: grey;
+    background-color: pink;
+  }
+  .guide {
+    margin: auto;
+    width:50%;
+    border-radius: 100px;
+    padding: 0 80px;
+    background-color: grey;
+    color: pink;
+  }
+}
+@media (max-width: 940px) {
+  .event-list-container {
+    display: grid;
+    grid-template-columns: 48% 48%;
+    grid-column-gap: 2%;
+    padding: 20px 0 0 0;
+    text-align: center;
+    align-content: center;
+  }
+  .item {
+    border-radius: 9px;
+    padding: 10%;
+    font-size: 20px;
+    text-align: left;
+    margin-bottom: 10px; 
+    min-height: 420px;
+    opacity: 0.6;
+    transform: scale(0.9);
+    transition: all 0.2s ease-in-out;
+  }
+  .item:hover {
+    transform: scale(1);
+    opacity: 1;
+  }
+  .company {
+    color: pink; 
+    background-color: grey;
+  }
+  .event {
+    color: grey;
+    background-color: pink;
+  }
+  .guide {
+    margin: auto;
+    width:50%;
+    border-radius: 100px;
+    padding: 0 80px;
+    background-color: grey;
+    color: pink;
+  }
+}
+@media (max-width: 640px) {
+  .event-list-container {
+    display: grid;
+    grid-template-columns: 100%;
+    padding: 20px 0 0 0;
+    align-content: center;
+    text-align: center;
+  }
+  
+  .item {
+    text-align: center;
+    color: grey; 
+    background-color: pink;
+    border-radius: 9px;
+    padding: 10%;
+    font-size: 20px;
+    text-align: left;
+    margin-bottom: 10px; 
+    min-height: 350px;
+    opacity: 0.6;
+    transition: 0.1s;
+  }
+  .item:hover {
+    opacity: 1;
+  }
+  .company {
+    color: pink; 
+    background-color: grey;
+  }
+  .event {
+    color: grey;
+    background-color: pink;
+  }
+  .guide {
+    margin: auto;
+    width:50%;
+    border-radius: 100px;
+    padding: 0 50px;
+    background-color: grey;
+    color: pink;
+    font-size: 15px;
+  }
+}
+.title-name {
+  font-size: calc(24px + (25 - 14) * ((100vw - 640px) / (1400 - 640)));
+}
+
