@@ -30,7 +30,7 @@ class EventItem extends React.Component {
       console.log("loading company: ", companyName)
     } else {
       companyData = getCompanyQuery.company
-      console.log(companyData.events);
+      //console.log(companyData.events);
     }
     return (
       <div 

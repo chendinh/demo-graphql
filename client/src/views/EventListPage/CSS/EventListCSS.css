@@ -26,8 +26,8 @@
 @media (min-width: 940px) {
   .event-list-container {
     display: grid;
-    grid-template-columns: 32% 32% 32%;
-    grid-column-gap: 2%;
+    grid-template-columns: 33% 33% 33%;
+    grid-column-gap: 0.5%;
     padding: 20px 0 0 0;
     text-align: center;
     align-content: center;
@@ -37,11 +37,10 @@
     padding: 10%;
     font-size: 20px;
     text-align: left;
-    margin-bottom: 10px; 
-    min-height: 420px;
+    min-height: 430px;
     opacity: 0.6;
     transform: scale(0.9);
-    transition: all 0.2s ease-in-out;
+    transition: all 0.15s ease-in-out;
   }
   .item:hover {
     transform: scale(1);
@@ -62,13 +61,41 @@
     padding: 0 80px;
     background-color: grey;
     color: pink;
+  }
+  .add-event-close {
+    background-color: grey;
+    background-image: url("../../../assets/img/add.png");
+    background-repeat: no-repeat;
+    background-size: 60% 50%;
+    background-position: 50% 50%;
+    height: 430px;
+  }
+  .add-event-open {
+    padding: 0;
+    position: relative;
+    transform: scale(1) !important;
+    opacity: 1;
+    grid-column: 1 / span 3;
+    background-color: grey;
+    color: pink;
+    margin-bottom: 5px;
+    height: 500px;
+    transition: 0;
+  }
+  .event-form {
+    position: absolute;
+    margin-left: 10%;
+    margin-right: 10%; 
+    width: 80%;
+    height: 100%;
+    padding-top: 30px;
   }
 }
 @media (max-width: 940px) {
   .event-list-container {
     display: grid;
-    grid-template-columns: 48% 48%;
-    grid-column-gap: 2%;
+    grid-template-columns: 49% 49%;
+    grid-column-gap: 1%;
     padding: 20px 0 0 0;
     text-align: center;
     align-content: center;
@@ -78,11 +105,10 @@
     padding: 10%;
     font-size: 20px;
     text-align: left;
-    margin-bottom: 10px; 
-    min-height: 420px;
+    min-height: 430px;
     opacity: 0.6;
     transform: scale(0.9);
-    transition: all 0.2s ease-in-out;
+    transition: all 0.15s ease-in-out;
   }
   .item:hover {
     transform: scale(1);
@@ -103,6 +129,34 @@
     padding: 0 80px;
     background-color: grey;
     color: pink;
+  }
+  .add-event-close {
+    background-color: grey;
+    background-image: url("../../../assets/img/add.png");
+    background-repeat: no-repeat;
+    background-size: 65% 55%;
+    background-position: 50% 50%;
+    min-height: 430px;
+  }
+  .add-event-open {
+    padding: 0;
+    position: relative;
+    transform: scale(1) !important;
+    opacity: 1;
+    grid-column: 1 / span 2;
+    background-color: grey;
+    color: pink;
+    margin-bottom: 10px;
+    height: 500px;
+    transition: 0;
+  }
+  .event-form {
+    position: absolute;
+    margin-left: 10%;
+    margin-right: 10%; 
+    width: 80%;
+    height: 100%;
+    padding-top: 20px;
   }
 }
 @media (max-width: 640px) {
@@ -122,10 +176,9 @@
     padding: 10%;
     font-size: 20px;
     text-align: left;
-    margin-bottom: 10px; 
     min-height: 350px;
     opacity: 0.6;
-    transition: 0.1s;
+    transition: 0.15s;
   }
   .item:hover {
     opacity: 1;
@@ -147,8 +200,113 @@
     color: pink;
     font-size: 15px;
   }
+  .add-event-close {
+    background-color: grey;
+    background-image: url("../../../assets/img/add.png");
+    background-repeat: no-repeat;
+    background-size: 60% 50%;
+    background-position: 50% 50%;
+    min-height: 350px;
+  }
+  .add-event-open {
+    padding: 0;
+    position: relative;
+    transform: scale(1) !important;
+    opacity: 1;
+    grid-column: 1 ;
+    background-color: grey;
+    color: pink;
+    margin-bottom: 10px;
+    height: 500px;
+    transition: 0;
+  }
+  .event-form {
+    position: absolute;
+    margin-left: 10%;
+    margin-right: 10%; 
+    width: 80%;
+    height: 100%;
+    padding-top: 40px;
+  }
 }
 .title-name {
   font-size: calc(24px + (25 - 14) * ((100vw - 640px) / (1400 - 640)));
+}
+.center-text {
+  text-align: center;
+}
+
+#EventForm {}
+.InputBox {
+  position: absolute,
+}
+.Input {
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  width: 90%;
+  border: none;
+  border-bottom: 1px solid pink;
+  outline: none;
+  color: pink;
+  background-color: transparent;
+  transition: .5;
+}
+.Input::placeholder {
+  color:pink;
+  font-size: 18px;
+}
+.InputDate {
+  width: 90%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid pink;
+  margin-bottom: 10px;
+  color: pink;
+  padding: 10px;
+  font-size: 16px;
+}
+.OptionCompanies {
+  width: 90%;
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid pink;
+  margin-bottom: 10px;
+  color: pink;
+  padding: 10px;
+  font-size: 16px;
+}
+.Label {
+  margin-bottom: 0;
+  width: 100%;
+  font-weight: 500;
+  font-size: 16px;
+  pointer-events: "none";
+  font-size: 16px;
+  color: pink;
+}
+.Label:hover {
+  color: "white";
+}
+.Button-Add {
+  color: pink;
+  background-color: black;
+  border: none;
+  padding: 20px;
+  margin-top: 20px;
+  margin-left: 5%;
+  margin-right:5%;
+  width: 40%;
+  border-radius: 20px;
+  font-size: 20px;
+  text-align: center;
+  transform: scale(0.9);
+  transition: all 0.15s ease-in-out;
+}
+.Button-Add:hover {
+  transform: scale(1);
+  color: grey;
+  background-color: pink;
 }
 

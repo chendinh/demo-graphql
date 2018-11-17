@@ -2,10 +2,11 @@ import React from "react";
 import { Fragment } from "react"
 import EventItem from "./EventItem.jsx";
 import "./CSS/EventListCSS.css";
+import EventForm from "./EventForm.jsx";
 
 class EventList extends React.Component {
   render() {
-    let { eventsQuery } = this.props;
+    let { eventsQuery, companiesQuery } = this.props;
     return(
       <Fragment>
         {
@@ -19,7 +20,9 @@ class EventList extends React.Component {
             </div>
           :
           <div className="event-list-container">
+            <EventForm companiesQuery={companiesQuery}/>
             {
+              
               eventsQuery.events.map((event, index) => {
                 return (
                   <span key={index}>

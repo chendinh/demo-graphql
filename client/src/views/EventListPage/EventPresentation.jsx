@@ -18,7 +18,10 @@ class EventPresentation extends React.Component {
           Event List
         </div>
         <p className="guide">Click below events to see infomation of company</p>
-        <EventList eventsQuery={eventsQuery} />
+        <EventList 
+          eventsQuery={eventsQuery} 
+          companiesQuery={companiesQuery}
+        />
       </div>
     )
   }

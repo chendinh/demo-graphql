@@ -29,5 +29,4 @@ export default
     // we can set new name for below Queries
     graphql(getEventsQuery, { name: "getEventsQuery" }),
     graphql(getCompaniesQuery, { name: "getCompaniesQuery" }),
-  )
-(EventContainer);
+  )(EventContainer);
