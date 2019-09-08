@@ -59,7 +59,7 @@
     width:50%;
     border-radius: 100px;
     padding: 0 80px;
-    background-color: grey;
+    background-color: black;
     color: pink;
   }
   .add-event-close {
@@ -127,7 +127,7 @@
     width:50%;
     border-radius: 100px;
     padding: 0 80px;
-    background-color: grey;
+    background-color: black;
     color: pink;
   }
   .add-event-close {
@@ -196,7 +196,7 @@
     width:50%;
     border-radius: 100px;
     padding: 0 50px;
-    background-color: grey;
+    background-color: black;
     color: pink;
     font-size: 15px;
   }
@@ -298,15 +298,14 @@
   margin-left: 5%;
   margin-right:5%;
   width: 40%;
-  border-radius: 20px;
+  border-radius: 50px;
   font-size: 20px;
   text-align: center;
   transform: scale(0.9);
-  transition: all 0.15s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 .Button-Add:hover {
   transform: scale(1);
   color: grey;
   background-color: pink;
 }
-

@@ -14,24 +14,7 @@ class EventForm extends React.Component {
   
   render() {
     const { addEvent } = this.state;
-    const { companiesQuery } = this.props;
-
-    const Input = props => (
-      <input 
-        type={props.type}
-        placeholder={props.placeholder}
-        className="Input"
-      />
-    )
-
-    const InputDate = props => (
-      <input 
-        className="InputDate" 
-        type="date" 
-        name="Date" 
-        min="Date"
-      />
-    )
+    const { companiesQuery, eventFields, handleChangeInput, CreateEventFunction, error } = this.props;
 
     const Label = props => (
       <div className="Label">
@@ -47,44 +30,62 @@ class EventForm extends React.Component {
               <div className="event-form">
                 <div className="InputBox">
                   <Label content="Eventname"/>
-                  <Input
+                  <input
                     type="text"
-                    placeholder=""
+                    id="eventName"
+                    name="eventName"
+                    value={eventFields.eventName}
+                    onChange={handleChangeInput}
+                    className="Input"
                   />
                 </div>
                 <div className="InputBox">
                   <Label content="Description"/>
-                  <Input
+                  <input
                     type="text"
-                    placeholder=""
+                    id="description"
+                    name="description"
+                    value={eventFields.description}
+                    onChange={handleChangeInput}
+                    className="Input"
                   />
                 </div>
                 <div className="InputBox">
                   <Label content="Date From"/>
-                  <InputDate
-                    type="text"
-                    name="DateFrom"
+                  <input 
+                    className="InputDate" 
+                    type="date" 
+                    name="dateFrom" 
+                    min="Date"
+                    data-date-format="YYYY MMMM DD"
+                    onChange={handleChangeInput}
                   />
                 </div>
                 <div className="InputBox">
                   <Label content="Date To"/>
-                  <InputDate
-                    type="text"
-                    name="DateTo"
-                  />
+                  <input 
+                    className="InputDate" 
+                    type="date" 
+                    name="dateEnd" 
+                    min="Date"
+                    data-date-format="YYYY MMMM DD"
+                    onChange={handleChangeInput}
+                />
                 </div>
                 <div className="InputBox">
                   <Label content="Company"/>
                   <select 
-                    defaultValue="selected"
                     className="OptionCompanies"
+                    onChange={handleChangeInput}
+                    placeholder={eventFields.companyID}
+                    name="companyID"
                   >
                     <option value="selected">Select</option>
                     {
                       companiesQuery.companies.map((company, index) => 
                         <option 
                           key={index} 
-                          value={company.companyName}
+                          value={company.id}
                         >
                           {company.companyName}
                         </option>
@@ -98,7 +99,20 @@ class EventForm extends React.Component {
                 >
                   Back
                 </button>
-                <button className="Button-Add">Add</button>
+                <button 
+                  className="Button-Add"
+                  onClick={async e => {
+                    e.preventDefault()
+                    const res = await CreateEventFunction()
+                    console.log("res: ",res)
+                    if(!error) { 
+                      console.log("no error")
+                      this.handleAddEvent() 
+                    }
+                  }}
+                >
+                  Add
+                </button>
               </div>
             </div>
           :

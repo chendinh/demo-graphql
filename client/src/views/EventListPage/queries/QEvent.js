@@ -22,24 +22,21 @@ const getEventsQuery = gql`
 const addEventMutation = gql`
     mutation AddEvent(
       $eventName: String!,
-      $dateFrom: String!,
-      $dateEnd: String!,
-      $address: String!, 
+      $dateFrom: Date!,
+      $dateEnd: Date!,
       $description: String!,
-      $companyID: ID
+      $companyID: String!
     ){
       addEvent(
         eventName: $eventName,
         dateFrom: $dateFrom,
         dateEnd: $dateEnd,
-        address: $address, 
         description: $description,
         companyID:  $companyID
       ){
         eventName
         dateFrom
         dateEnd
-        address
         description
         companies {
           companyName

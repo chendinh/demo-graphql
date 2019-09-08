@@ -5,7 +5,14 @@ import EventList from "./EventList.jsx";
 
 class EventPresentation extends React.Component {
   render() {
-    const { eventsQuery, companiesQuery } = this.props;
+    const { 
+      eventsQuery, 
+      companiesQuery, 
+      eventFields, 
+      handleChangeInput, 
+      CreateEventFunction,
+      error
+    } = this.props;
     // get Company List from Query Graph API
     // if(companiesQuery.loading){
     //   console.log("Companies loading...");
@@ -21,6 +28,11 @@ class EventPresentation extends React.Component {
         <EventList 
           eventsQuery={eventsQuery} 
           companiesQuery={companiesQuery}
+          eventFields={eventFields}
+          handleChangeInput={handleChangeInput}
+          //for Mutation
+          CreateEventFunction={CreateEventFunction}
+          error={error}
         />
       </div>
     )

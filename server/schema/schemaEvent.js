@@ -26,7 +26,7 @@ const EventType = new GraphQLObjectType ({
     eventName: { type: GraphQLString },
     dateFrom: { type: GraphQLDate },
     dateEnd: { type: GraphQLDate },
-    address: { type: GraphQLString },
+    //address: { type: GraphQLString },
     description: { type: GraphQLString },
     companies: {
       type: CompanyType,
@@ -56,6 +56,7 @@ const CompanyType = new GraphQLObjectType ({
 
 const Mutation = new GraphQLObjectType ({
   name: "Mutation",
+  description: 'These are the things we can change',
   fields: {
     addCompany: {
       type: CompanyType,
@@ -75,13 +76,14 @@ const Mutation = new GraphQLObjectType ({
         return newCompany.save();
       }
     },
+    // xem xet lai co can doi ten giong ben client hay khong. AddEvent hay addEvent
     addEvent: {
       type: EventType,
       args: {
         eventName: { type: new GraphQLNonNull(GraphQLString) },
         dateFrom: { type: new GraphQLNonNull(GraphQLDate) },
         dateEnd: { type: new GraphQLNonNull(GraphQLDate) },
-        address: { type: new GraphQLNonNull(GraphQLString) },
+        //address: { type: new GraphQLNonNull(GraphQLString) },
         description: { type: new GraphQLNonNull(GraphQLString) },
         companyID: { type: new GraphQLNonNull(GraphQLString) },
       },
@@ -90,7 +92,7 @@ const Mutation = new GraphQLObjectType ({
           eventName: args.eventName,
           dateFrom: args.dateFrom,
           dateEnd: args.dateEnd,
-          address: args.address,
+          //address: args.address,
           description: args.description,
           companyID: args.companyID,
         });

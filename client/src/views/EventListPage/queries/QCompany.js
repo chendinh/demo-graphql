@@ -12,7 +12,6 @@ const getCompaniesQuery = gql`
       events{
         id
         eventName
-        address
         dateFrom
       }
     }
@@ -30,7 +29,6 @@ const getCompanyQuery = gql`
       events{
         id
         eventName
-        address
         dateFrom
       }
     }

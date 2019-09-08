@@ -6,7 +6,14 @@ import EventForm from "./EventForm.jsx";
 
 class EventList extends React.Component {
   render() {
-    let { eventsQuery, companiesQuery } = this.props;
+    let { 
+      eventsQuery, 
+      companiesQuery, 
+      eventFields, 
+      handleChangeInput, 
+      CreateEventFunction,
+      error
+    } = this.props;
     return(
       <Fragment>
         {
@@ -20,9 +27,15 @@ class EventList extends React.Component {
             </div>
           :
           <div className="event-list-container">
-            <EventForm companiesQuery={companiesQuery}/>
+            <EventForm 
+              companiesQuery={companiesQuery} 
+              eventFields={eventFields}
+              handleChangeInput={handleChangeInput}
+              //For Mutation
+              CreateEventFunction={CreateEventFunction}
+              error={error}
+            />
             {
-              
               eventsQuery.events.map((event, index) => {
                 return (
                   <span key={index}>
