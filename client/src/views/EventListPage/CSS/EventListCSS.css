@@ -4,7 +4,11 @@
   margin: 0;
   text-align: center;
 }
-
+.title-name {
+  color: black; 
+  text-align: center;
+  font-weight: bold;
+}
 .Title {
   font-size: 100px;
   font-weight: bold;
@@ -308,4 +312,58 @@
   transform: scale(1);
   color: grey;
   background-color: pink;
+}
+.Button-Delete {
+  color: pink;
+  background-color: grey;
+  border: none;
+  padding: 10px;
+  width: 33%;
+  border-radius: 10px;
+  font-size: 10px;
+  text-align: center;
+  transform: scale(0.9);
+  transition: all 0.1s ease-in-out;
+}
+.Button-Delete:hover {
+  transform: scale(1);
+  font-size: 15px;
+  color: black;
+  background-color: red;
+}
+.Button-Update {
+  color: pink;
+  background-color: grey;
+  border: none;
+  padding: 10px;
+  width: 33%;
+  border-radius: 10px;
+  font-size: 10px;
+  text-align: center;
+  transform: scale(0.9);
+  transition: all 0.1s ease-in-out;
+}
+.Button-Update:hover {
+  transform: scale(1);
+  font-size: 15px;
+  color: black;
+  background-color: green;
+}
+.Button-Next {
+  color: pink;
+  background-color: grey;
+  border: none;
+  padding: 10px;
+  width: 33%;
+  border-radius: 10px;
+  font-size: 10px;
+  text-align: center;
+  transform: scale(0.9);
+  transition: all 0.1s ease-in-out;
+}
+.Button-Next:hover {
+  transform: scale(1);
+  font-size: 15px;
+  color: black;
+  background-color: blue;
 }

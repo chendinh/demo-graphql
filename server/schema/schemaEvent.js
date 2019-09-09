@@ -98,6 +98,17 @@ const Mutation = new GraphQLObjectType ({
         });
         return newEvent.save();
       }
+    },
+    deleteEvent: {
+      type: EventType,
+      description: 'Delete an event with id and return the event that was deleted.',
+      args: {
+        id: { type: new GraphQLNonNull(GraphQLString) }
+      },
+      resolve: (value, { id }) => {
+        console.log("try to delete event with id:",id)
+        return Event.deleteOne({ "_id": id });
+      }
     }
   }
 });

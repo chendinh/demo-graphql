@@ -48,4 +48,16 @@ const addEventMutation = gql`
     }
 `;
 
-export { getEventsQuery, addEventMutation };
+const deleteEventMutation = gql`
+    mutation deleteEvent(
+      $id: String!,
+    ){
+      deleteEvent(
+        id: $id,
+      ){
+        eventName
+      }
+    }
+`;
+
+export { getEventsQuery, addEventMutation, deleteEventMutation };
