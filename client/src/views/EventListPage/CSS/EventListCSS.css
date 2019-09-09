@@ -327,9 +327,9 @@
 }
 .Button-Delete:hover {
   transform: scale(1);
-  font-size: 15px;
-  color: black;
-  background-color: red;
+  font-size: 12px;
+  color: pink;
+  background-color: black;
 }
 .Button-Update {
   color: pink;
@@ -345,9 +345,9 @@
 }
 .Button-Update:hover {
   transform: scale(1);
-  font-size: 15px;
-  color: black;
-  background-color: green;
+  font-size: 12px;
+  color: pink;
+  background-color: black;
 }
 .Button-Next {
   color: pink;
@@ -363,7 +363,7 @@
 }
 .Button-Next:hover {
   transform: scale(1);
-  font-size: 15px;
-  color: black;
-  background-color: blue;
+  font-size: 12px;
+  color: pink;
+  background-color: black;
 }

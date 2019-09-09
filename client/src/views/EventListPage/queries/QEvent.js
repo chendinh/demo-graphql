@@ -48,6 +48,33 @@ const addEventMutation = gql`
     }
 `;
 
+const updateEventMutation = gql`
+    mutation UpdateEvent(
+      $id: String!,
+      $eventName: String,
+      $dateFrom: Date,
+      $dateEnd: Date,
+      $description: String,
+    ){
+      updateEvent(
+        id: $id,
+        eventName: $eventName,
+        dateFrom: $dateFrom,
+        dateEnd: $dateEnd,
+        description: $description,
+      ){
+        id
+        eventName
+        dateFrom
+        dateEnd
+        description
+        companies {
+          companyName
+        }
+      }
+    }
+`;
+
 const deleteEventMutation = gql`
     mutation deleteEvent(
       $id: String!,
@@ -60,4 +87,4 @@ const deleteEventMutation = gql`
     }
 `;
 
-export { getEventsQuery, addEventMutation, deleteEventMutation };
+export { getEventsQuery, addEventMutation, deleteEventMutation, updateEventMutation };

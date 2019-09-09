@@ -99,6 +99,31 @@ const Mutation = new GraphQLObjectType ({
         return newEvent.save();
       }
     },
+
+    updateEvent: {
+      type: EventType,
+      args: {
+        id: { type: new GraphQLNonNull(GraphQLString)},
+        eventName: { type: GraphQLString },
+        dateFrom: { type: GraphQLDate },
+        dateEnd: { type: GraphQLDate },
+        //address: { type: new GraphQLNonNull(GraphQLString) },
+        description: { type: GraphQLString },
+      },
+      resolve(parent, args) {
+        return Event.update(
+          { "_id" : args.id },
+          {
+            eventName : args.eventName ? args.eventName : "",
+            dateFrom : args.dateFrom ? args.dateFrom : "",
+            dateEnd : args.dateEnd ? args.dateEnd : "",
+            description : args.description ? args.description : ""
+          },
+          { upsert: true }
+        );
+      }
+    },
+
     deleteEvent: {
       type: EventType,
       description: 'Delete an event with id and return the event that was deleted.',

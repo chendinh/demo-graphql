@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql, compose, Mutation } from "react-apollo";
 
+import EventForm from "./EventForm.jsx";
 import "./CSS/EventListCSS.css";
 import { getCompanyQuery } from "./queries/QCompany";
 import { deleteEventMutation } from "./queries/QEvent.js";
@@ -9,18 +10,25 @@ class EventItem extends React.Component {
   state = {
     showCompanyInfo: false,
     showButtons: false,
+    showUpdateForm: false,
     DeletedEventID: '',
   }
 
-  handleShowInfo = (event) => {
+  handleShowInfo = () => {
     this.setState({
       showCompanyInfo: !this.state.showCompanyInfo,
     })
   }
 
-  handleShowButtons = (event) => {
+  handleShowButtons = () => {
     this.setState({
       showButtons: !this.state.showButtons,
+    })
+  }
+
+  handeShowUpdateForm = () => {
+    this.setState({
+      showUpdateForm: !this.state.showUpdateForm,
     })
   }
 
@@ -33,7 +41,8 @@ class EventItem extends React.Component {
       dateEnd,
       companyName
     } = this.props;
-    let { showCompanyInfo, showButtons } = this.state
+    let { showCompanyInfo, showButtons, showUpdateForm } = this.state
+
     const { getCompanyQuery } = this.props;
     let companyData;
     if(getCompanyQuery.loading) {
@@ -42,7 +51,20 @@ class EventItem extends React.Component {
       companyData = getCompanyQuery.company
       //console.log(companyData.events);
     }
+
     return (
+      showUpdateForm
+      ?
+        <EventForm 
+          id={id} 
+          eventName={eventName}
+          description={description}
+          dateFrom={dateFrom}
+          dateEnd={dateEnd}
+          updateEvent={true} 
+          handeShowUpdateForm={this.handeShowUpdateForm}
+        />
+      :
         !showCompanyInfo 
         ?
         <div 
@@ -81,6 +103,8 @@ class EventItem extends React.Component {
                   className="Button-Update" 
                   onClick={async e => {
                     e.preventDefault()
+                    this.handeShowUpdateForm()
+                    console.log("show update form successfully")
                   }}>
                   UPDATE 
                 </button>
@@ -121,8 +145,6 @@ class EventItem extends React.Component {
     )
   }
 }
-
-
 
 export default 
   compose(
